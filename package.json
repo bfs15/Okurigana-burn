@@ -1,0 +1,41 @@
+{
+	"happiness": {
+		"globals": [
+			"chrome",
+			"browser",
+			"location",
+			"XMLHttpRequest",
+			"MutationObserver"
+		]
+	},
+	"dependencies": {
+		"@babel/core": "^7.4.3",
+		"babelify": "^10.0.0",
+		"kuroshiro": "^1.1.2",
+		"kuroshiro-analyzer-kuromoji": "^1.1.0"
+	},
+	"name": "Okurigana-burn",
+	"version": "1.0.0",
+	"description": "Kanji text to Romaji (Hepburn).",
+	"main": "./src/background.js",
+	"license": "MIT",
+	"watch": {
+		"build": {
+			"patterns": ["src", "test"],
+			"extensions": "js,jsx",
+			"ignore": "src/vendor/external.min.js",
+			"quiet": true,
+			"legacyWatch": true,
+			"delay": 750,
+			"runOnChangeOnly": true
+		}
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "./src/background.js",
+		"build": "webpack -d --entry ./src/Okurigana-burn.js --output ./dist/Okurigana-burn-bundle.js",
+		"build:prod": "webpack -p --entry ./src/Okurigana-burn.js --output ./dist/Okurigana-burn-bundle.js",
+		"watch": "npm-watch"
+	},
+	"devDependencies": {}
+}
